@@ -1,0 +1,55 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Microsoft Edge",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:3000/games/ten_puzzle",
+            "webRoot": "${workspaceFolder}/src",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///src/*": "${webRoot}/*"
+            },
+            "preLaunchTask": "start-next",
+            "postDebugTask": "kill-next"
+        },
+        {
+            "name": "Launch Firefox",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://localhost:3000/games/ten_puzzle",
+            "webRoot": "${workspaceFolder}/src",
+            "pathMappings": [
+                {
+                    "url": "webpack:///src",
+                    "path": "${webRoot}"
+                }
+            ],
+            "preLaunchTask": "start-next",
+            "postDebugTask": "kill-next"
+        },
+        {
+            "name": "Launch Edge against localhost",
+            "type": "pwa-msedge",
+            "request": "launch",
+            "url": "http://localhost:3000/games/ten_puzzle",
+            "webRoot": "${workspaceFolder}/src",
+            "userDataDir": false,
+            "sourceMapPathOverrides": {
+                "webpack:///src/*": "${webRoot}/*"
+            },
+            "preLaunchTask": "start-next",
+            "postDebugTask": "kill-next"
+        },
+        {
+            "name": "Attach to Edge",
+            "type": "pwa-msedge",
+            "request": "attach",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}/src",
+            "url": "http://localhost:3000/games/ten_puzzle"
+        }
+    ]
+}
